@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header>
+        <h1>Список cправ</h1>
+        <form class="search">
+          <div class="search-input">
+            <input type="search" name="search" id="search" />
+            <i class="bi bi-search"></i>
+          </div>
+          <div class="cats-container">
+            <div class="cat-check">
+              <input type="checkbox" name="checks[]" value="homeWork" id="check-1" /><label
+                for="check-1"
+                >Домашні справи</label
+              >
+            </div>
+            <div class="cat-check">
+              <input type="checkbox" name="checks[]" value="work" id="check-2" /><label
+                for="check-2"
+                >робота</label
+              >
+            </div>
+            <div class="cat-check">
+              <input type="checkbox" name="checks[]" value="fitness" id="check-3" /><label
+                for="check-3"
+                >фітнес</label
+              >
+            </div>
+          </div>
+        </form>
+      </header>
+      <section class="todo-list" id="todos"></section>
+      <footer>
+        <button id="add-btn" class="icon-button">
+          <i class="bi bi-plus-lg"></i><span>Додати справу</span>
+        </button>
+        <hr />
+        <form class="todo-add hide" id="todo-add" data-mode="create" data-id="">
+          <h4>Категорія</h4>
+          <div class="cats-container">
+            <div class="cat-check">
+              <input type="checkbox" name="checksAdd" value="homeWork" id="checkAdd-1" /><label
+                for="checkAdd-1"
+                >Домашні справи</label
+              >
+            </div>
+            <div class="cat-check">
+              <input type="checkbox" name="checksAdd" value="work" id="checkAdd-2" /><label
+                for="checkAdd-2"
+                >робота</label
+              >
+            </div>
+            <div class="cat-check">
+              <input type="checkbox" name="checksAdd" value="fitness" id="checkAdd-3" /><label
+                for="checkAdd-3"
+                >фітнес</label
+              >
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="title">Заголовок</label>
+            <input type="text" name="title" id="title" />
+          </div>
+          <div class="form-control">
+            <label for="content">Примітка</label>
+            <textarea rows="5" name="content" id="content"></textarea>
+          </div>
+          <div class="form-buttons">
+            <button id="cancel-btn" type="button" class="icon-button outline">
+              <i class="bi bi-x"></i><span>Скасувати</span>
+            </button>
+            <button type="submit" class="icon-button">
+              <i class="bi bi-check-lg"></i><span>Зберегти</span>
+            </button>
+          </div>
+        </form>
+      </footer>
+    </main>
+    <template id="template-item">
+      <div class="todo-item">
+        <aside class="todo-categories"></aside>
+        <aside class="todo-actions">
+          <button data-action="edit">
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button data-action="delete">
+            <i class="bi bi-trash"></i>
+          </button>
+        </aside>
+        <aside class="todo-content">
+          <h2 class="todo-title">Купити продукти</h2>
+          <p class="todo-text">Скласти список необхідних продуктів та відвідати магазин.</p>
+          <button class="icon-button" data-action="completed">
+            <i class="bi bi-check2-circle"></i>
+            <span>Завершити</span>
+          </button>
+        </aside>
+      </div>
+    </template>
+    <!-- <script src="index.js" defer></script> -->
+    <script src="indexLS.js" defer></script>
+  </body>
+</html>
